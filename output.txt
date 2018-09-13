@@ -1,0 +1,104 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf400
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww19180\viewh8940\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \
+\'97 Linear Regression\'97 \
+\
+Call:\
+lm(formula = formula, data = mhp.train)\
+\
+Residuals:\
+     Min       1Q   Median       3Q      Max \
+-1977840  -129665   -30154    78763  6105371 \
+\
+Coefficients:\
+                 Estimate Std. Error t value Pr(>|t|)    \
+(Intercept)     7.337e+06  3.210e+05   22.86   <2e-16 ***\
+SQUARE.FEET     2.669e+02  1.260e+00  211.91   <2e-16 ***\
+BEDS           -7.624e+04  5.112e+03  -14.91   <2e-16 ***\
+BATHS           1.032e+05  5.994e+03   17.21   <2e-16 ***\
+YEAR.BUILT     -3.688e+03  1.623e+02  -22.73   <2e-16 ***\
+Violent.Crimes -1.330e+01  7.209e-01  -18.46   <2e-16 ***\
+---\
+Signif. codes:  0 \'91***\'92 0.001 \'91**\'92 0.01 \'91*\'92 0.05 \'91.\'92 0.1 \'91 \'92 1\
+\
+Residual standard error: 279600 on 5043 degrees of freedom\
+Multiple R-squared:  0.9605,	Adjusted R-squared:  0.9604 \
+F-statistic: 2.451e+04 on 5 and 5043 DF,  p-value: < 2.2e-16\
+\
+\
+\'97 Polynomial Deg 2 \'97\
+\
+\
+Call:\
+lm(formula = mhp.train$PRICE ~ poly(mhp.train$SQUARE.FEET, degree = 2, \
+    raw = TRUE) + poly(mhp.train$BEDS, degree = 2, raw = TRUE) + \
+    poly(mhp.train$BATHS, degree = 2, raw = TRUE) + poly(mhp.train$YEAR.BUILT, \
+    degree = 2, raw = TRUE) + poly(mhp.train$Violent.Crimes, \
+    degree = 2, raw = TRUE))\
+\
+Residuals:\
+     Min       1Q   Median       3Q      Max \
+-2128723  -113726   -22887    75429  6076579 \
+\
+Coefficients:\
+                                                          Estimate Std. Error t value Pr(>|t|)    \
+(Intercept)                                              2.594e+08  1.872e+07  13.855  < 2e-16 ***\
+poly(mhp.train$SQUARE.FEET, degree = 2, raw = TRUE)1     2.234e+02  7.017e+00  31.842  < 2e-16 ***\
+poly(mhp.train$SQUARE.FEET, degree = 2, raw = TRUE)2     2.497e-04  5.333e-05   4.682 2.92e-06 ***\
+poly(mhp.train$BEDS, degree = 2, raw = TRUE)1           -2.436e+04  1.085e+04  -2.245   0.0248 *  \
+poly(mhp.train$BEDS, degree = 2, raw = TRUE)2           -5.236e+03  1.205e+03  -4.346 1.41e-05 ***\
+poly(mhp.train$BATHS, degree = 2, raw = TRUE)1           5.068e+04  1.018e+04   4.976 6.70e-07 ***\
+poly(mhp.train$BATHS, degree = 2, raw = TRUE)2           7.451e+03  1.134e+03   6.569 5.58e-11 ***\
+poly(mhp.train$YEAR.BUILT, degree = 2, raw = TRUE)1     -2.599e+05  1.900e+04 -13.681  < 2e-16 ***\
+poly(mhp.train$YEAR.BUILT, degree = 2, raw = TRUE)2      6.523e+01  4.819e+00  13.537  < 2e-16 ***\
+poly(mhp.train$Violent.Crimes, degree = 2, raw = TRUE)1 -1.036e+02  4.144e+00 -25.010  < 2e-16 ***\
+poly(mhp.train$Violent.Crimes, degree = 2, raw = TRUE)2  3.157e-03  1.442e-04  21.898  < 2e-16 ***\
+---\
+Signif. codes:  0 \'91***\'92 0.001 \'91**\'92 0.01 \'91*\'92 0.05 \'91.\'92 0.1 \'91 \'92 1\
+\
+Residual standard error: 261400 on 5038 degrees of freedom\
+Multiple R-squared:  0.9655,	Adjusted R-squared:  0.9654 \
+F-statistic: 1.409e+04 on 10 and 5038 DF,  p-value: < 2.2e-16\
+\
+\'97 Polynomial Deg 3 --\
+\
+Call:\
+lm(formula = mhp.train$PRICE ~ poly(mhp.train$SQUARE.FEET, degree = 3, \
+    raw = TRUE) + poly(mhp.train$BEDS, degree = 3, raw = TRUE) + \
+    poly(mhp.train$BATHS, degree = 3, raw = TRUE) + poly(mhp.train$YEAR.BUILT, \
+    degree = 3, raw = TRUE) + poly(mhp.train$Violent.Crimes, \
+    degree = 3, raw = TRUE))\
+\
+Residuals:\
+     Min       1Q   Median       3Q      Max \
+-2539173   -82370    -9032    61173  5912583 \
+\
+Coefficients:\
+                                                          Estimate Std. Error t value Pr(>|t|)    \
+(Intercept)                                             -8.397e+09  9.866e+08  -8.511  < 2e-16 ***\
+poly(mhp.train$SQUARE.FEET, degree = 3, raw = TRUE)1     2.323e+01  1.355e+01   1.714  0.08651 .  \
+poly(mhp.train$SQUARE.FEET, degree = 3, raw = TRUE)2     3.738e-02  1.896e-03  19.715  < 2e-16 ***\
+poly(mhp.train$SQUARE.FEET, degree = 3, raw = TRUE)3    -1.019e-07  5.494e-09 -18.545  < 2e-16 ***\
+poly(mhp.train$BEDS, degree = 3, raw = TRUE)1            7.694e+03  1.742e+04   0.442  0.65885    \
+poly(mhp.train$BEDS, degree = 3, raw = TRUE)2           -9.449e+03  3.148e+03  -3.002  0.00270 ** \
+poly(mhp.train$BEDS, degree = 3, raw = TRUE)3            2.669e+02  1.447e+02   1.844  0.06522 .  \
+poly(mhp.train$BATHS, degree = 3, raw = TRUE)1           4.347e+04  1.601e+04   2.715  0.00664 ** \
+poly(mhp.train$BATHS, degree = 3, raw = TRUE)2           8.188e+03  2.735e+03   2.994  0.00277 ** \
+poly(mhp.train$BATHS, degree = 3, raw = TRUE)3          -4.255e+02  1.066e+02  -3.991 6.68e-05 ***\
+poly(mhp.train$YEAR.BUILT, degree = 3, raw = TRUE)1      1.290e+07  1.505e+06   8.571  < 2e-16 ***\
+poly(mhp.train$YEAR.BUILT, degree = 3, raw = TRUE)2     -6.606e+03  7.657e+02  -8.627  < 2e-16 ***\
+poly(mhp.train$YEAR.BUILT, degree = 3, raw = TRUE)3      1.127e+00  1.298e-01   8.682  < 2e-16 ***\
+poly(mhp.train$Violent.Crimes, degree = 3, raw = TRUE)1 -6.166e+02  1.564e+01 -39.430  < 2e-16 ***\
+poly(mhp.train$Violent.Crimes, degree = 3, raw = TRUE)2  4.658e-02  1.287e-03  36.209  < 2e-16 ***\
+poly(mhp.train$Violent.Crimes, degree = 3, raw = TRUE)3 -1.085e-06  3.193e-08 -33.971  < 2e-16 ***\
+---\
+Signif. codes:  0 \'91***\'92 0.001 \'91**\'92 0.01 \'91*\'92 0.05 \'91.\'92 0.1 \'91 \'92 1\
+\
+Residual standard error: 225600 on 5033 degrees of freedom\
+Multiple R-squared:  0.9743,	Adjusted R-squared:  0.9742 \
+F-statistic: 1.273e+04 on 15 and 5033 DF,  p-value: < 2.2e-16}
